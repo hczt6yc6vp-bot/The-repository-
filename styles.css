@@ -6,6 +6,8 @@
   --muted: #b3b3b3;
   --line: #2a2a2a;
   --radius: 10px;
+  --font-text: "Source Serif 4", "Tiempos Text", Georgia, "Times New Roman", serif;
+  --font-ui: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -16,7 +18,8 @@ section[id] { scroll-margin-top: 70px; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-text);
+  font-size: 17px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
@@ -57,7 +60,7 @@ a { color: var(--text); }
   border-bottom: 1px solid var(--line);
 }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 70px; }
-.logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.15rem; text-decoration: none; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; text-decoration: none; }
 .logo svg { width: 44px; height: 22px; fill: none; stroke: var(--text); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
 .nav-links { display: flex; align-items: center; gap: 28px; }
 .nav-links a:not(.btn) { text-decoration: none; color: var(--muted); font-weight: 500; }
@@ -69,14 +72,14 @@ a { color: var(--text); }
 /* ---------- Hero ---------- */
 .hero { padding: 120px 0 110px; text-align: center; border-bottom: 1px solid var(--line); }
 .eyebrow { text-transform: uppercase; letter-spacing: .2em; font-size: .8rem; color: var(--muted); margin-bottom: 16px; }
-.hero h1 { font-size: clamp(2.4rem, 7vw, 4.5rem); line-height: 1.05; font-weight: 800; letter-spacing: -.02em; }
+.hero h1 { font-size: clamp(2.4rem, 7vw, 4.5rem); line-height: 1.05; font-weight: 600; letter-spacing: -.01em; }
 .lead { max-width: 620px; margin: 22px auto 0; font-size: 1.15rem; color: var(--muted); }
 .hero-actions { margin-top: 36px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
 /* ---------- Sections ---------- */
 .section { padding: 90px 0; }
 .section-alt { background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 800; letter-spacing: -.01em; }
+h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 600; }
 .section-intro { color: var(--muted); margin: 10px 0 40px; }
 
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
@@ -87,7 +90,7 @@ h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 800; letter-spacing: -.
 
 /* ---------- Packages ---------- */
 .package { position: relative; display: flex; flex-direction: column; }
-.package .price { font-size: 2.6rem; font-weight: 800; color: var(--text); line-height: 1.1; margin: 6px 0 18px; }
+.package .price { font-size: 2.6rem; font-weight: 600; color: var(--text); line-height: 1.1; margin: 6px 0 18px; }
 .package .price span { font-size: 1rem; font-weight: 500; color: var(--muted); }
 .features { list-style: none; display: grid; gap: 10px; border-top: 1px solid var(--line); padding-top: 18px; }
 .features li { color: var(--muted); padding-left: 22px; position: relative; }
@@ -95,12 +98,22 @@ h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 800; letter-spacing: -.
 .featured { border-color: var(--text); }
 .badge { position: absolute; top: -12px; left: 28px; background: var(--text); color: var(--bg) !important; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; padding: 3px 10px; border-radius: 999px; }
 
+/* ---------- UI font (nav, buttons, labels, forms) ---------- */
+.logo, .nav-links, .btn, .eyebrow, .badge, .booking-form label, .booking-form input,
+.booking-form select, .booking-form textarea, .form-hint, .form-status { font-family: var(--font-ui); }
+h1, h2, h3 { font-weight: 600; text-wrap: balance; }
+
+/* ---------- Labor rate ---------- */
+.labor { display: flex; align-items: baseline; gap: 6px 14px; flex-wrap: wrap; border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 22px; margin: -16px 0 28px; }
+.labor p { color: var(--muted); }
+.labor .labor-price { color: var(--text); font-size: 1.15rem; }
+
 /* ---------- Other / combine ---------- */
 .wide { margin-top: 20px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
 .wide > div { flex: 1 1 360px; }
 .combine { margin-top: 20px; border: 1px dashed #555; border-radius: var(--radius); padding: 22px 28px; text-align: center; }
 .combine p { color: var(--muted); }
-.combine .combine-title { color: var(--text); font-weight: 800; font-size: 1.2rem; margin-bottom: 4px; }
+.combine .combine-title { color: var(--text); font-weight: 700; font-size: 1.2rem; margin-bottom: 4px; }
 .form-hint { color: var(--muted); font-size: .95rem; margin-bottom: -6px; }
 
 /* ---------- Pricing ---------- */
@@ -142,7 +155,7 @@ h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 800; letter-spacing: -.
 .booking-form select:focus,
 .booking-form textarea:focus { outline: none; border-color: var(--text); }
 .booking-form ::placeholder { color: #666; }
-.honeypot { position: absolute; width: 1px; height: 1px; padding: 0; border: 0; overflow: hidden; clip-path: inset(50%); opacity: 0; pointer-events: none; }
+.booking-form .honeypot { position: absolute; left: 0; width: 1px !important; height: 1px; padding: 0; border: 0; overflow: hidden; clip-path: inset(50%); opacity: 0; pointer-events: none; }
 .form-status { min-height: 1.5em; text-align: center; font-weight: 500; }
 .form-status.success { color: #7dffa1; }
 .form-status.error { color: #ff8a8a; }

@@ -7,7 +7,7 @@
   <meta name="description" content="Nettoyage professionnel, révisions et réparations de vélos. Réservez votre rendez-vous en ligne.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -92,6 +92,10 @@
       <div class="container">
         <h2>Réparation</h2>
         <p class="section-intro">Des prix clairs et fixes. Les pièces de rechange sont facturées en plus.</p>
+        <div class="labor">
+          <p class="labor-price">Main-d'œuvre : <strong>10 CHF</strong> / heure</p>
+          <p>+ le prix des pièces</p>
+        </div>
         <div class="grid">
           <article class="card package">
             <h3>Crevaison</h3>
@@ -102,7 +106,7 @@
           </article>
           <article class="card package">
             <h3>Révision</h3>
-            <p class="price">40 <span>CHF</span></p>
+            <p class="price">35 <span>CHF</span></p>
             <ul class="features">
               <li>Contrôle général du vélo</li>
               <li>Lubrification de la plupart des composants</li>
@@ -111,7 +115,7 @@
           <article class="card package featured">
             <p class="badge">Le plus complet</p>
             <h3>Révision complète</h3>
-            <p class="price">60 <span>CHF</span></p>
+            <p class="price">45 <span>CHF</span></p>
             <ul class="features">
               <li>Contrôle approfondi du vélo</li>
               <li>Dégraissage de toutes les pièces</li>
@@ -123,7 +127,7 @@
         <article class="card wide">
           <div>
             <h3>Autre problème ?</h3>
-            <p>Votre souci ne figure pas dans la liste ? Choisissez « Autre » dans le formulaire et décrivez-nous le problème. Nous vous répondrons avec un devis.</p>
+            <p>Votre souci ne figure pas dans la liste ? Choisissez « Autre » dans le formulaire et décrivez-nous le problème. Nous vous répondrons avec un devis : main-d'œuvre à 10 CHF de l'heure, plus le prix des pièces.</p>
           </div>
           <a href="#reserver" class="btn btn-outline">Décrire mon problème</a>
         </article>
@@ -198,8 +202,8 @@
               <select name="Réparation" id="repair">
                 <option value="Aucune">Aucune réparation</option>
                 <option>Crevaison (25 CHF)</option>
-                <option>Révision (40 CHF)</option>
-                <option>Révision complète (60 CHF)</option>
+                <option>Révision (35 CHF)</option>
+                <option>Révision complète (45 CHF)</option>
                 <option value="Autre">Autre (décrire le problème)</option>
               </select>
             </label>
