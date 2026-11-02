@@ -1,4 +1,4 @@
-# Spoke & Shine — Bicycle Cleaning & Repair Website
+# Olafsgarage.ch — Bicycle Cleaning & Repair Website
 
 A simple one-page website (black background, white text) with an online
 appointment form that sends booking requests straight to your email.
@@ -20,8 +20,8 @@ that, every booking arrives in that inbox with the client's details.
 
 ## Make it your own
 
-The site is in French. Edit `index.html` to change the business name
-("Spoke & Shine"), address and opening hours (currently placeholders).
+The site is in French. Edit `index.html` to change the address and opening hours (currently
+placeholders).
 
 ## Publish for free with GitHub Pages
 
