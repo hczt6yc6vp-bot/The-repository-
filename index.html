@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spoke &amp; Shine | Bicycle Cleaning &amp; Repair</title>
+  <meta name="description" content="Professional bicycle cleaning, tune-ups and repairs. Book your appointment online.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="logo">
+        <svg viewBox="0 0 64 32" aria-hidden="true">
+          <circle cx="13" cy="20" r="10"/>
+          <circle cx="51" cy="20" r="10"/>
+          <path d="M13 20 L25 6 H40 L51 20 M25 6 L32 20 L40 6 M22 4 H28 M38 4 H44"/>
+        </svg>
+        <span>Spoke &amp; Shine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#book" class="btn btn-small">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Bicycle Cleaning &amp; Repair</p>
+        <h1>Your bike, running like new.</h1>
+        <p class="lead">Deep cleaning, tune-ups and expert repairs for every kind of bike — road, mountain, commuter, kids and e-bikes.</p>
+        <div class="hero-actions">
+          <a href="#book" class="btn">Book an Appointment</a>
+          <a href="#services" class="btn btn-outline">See Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section id="services" class="section">
+      <div class="container">
+        <h2>Services</h2>
+        <p class="section-intro">Everything your bike needs to stay safe, smooth and spotless.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Deep Clean</h3>
+            <p>Full frame wash, drivetrain degrease, chain clean and lube, and a polish that makes it shine.</p>
+          </article>
+          <article class="card">
+            <h3>Tune-Up</h3>
+            <p>Brake and gear adjustments, tyre pressure, bolt check and a full safety inspection.</p>
+          </article>
+          <article class="card">
+            <h3>Flat &amp; Tyre Repair</h3>
+            <p>Puncture repairs, tube and tyre replacement, tubeless setup and sealant top-ups.</p>
+          </article>
+          <article class="card">
+            <h3>Brakes</h3>
+            <p>Pad replacement, cable service, hydraulic bleeds and rotor truing.</p>
+          </article>
+          <article class="card">
+            <h3>Drivetrain</h3>
+            <p>Chain, cassette and chainring replacement, derailleur alignment and indexing.</p>
+          </article>
+          <article class="card">
+            <h3>Wheels</h3>
+            <p>Wheel truing, spoke replacement, hub servicing and bearing replacement.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRICING ============ -->
+    <section id="pricing" class="section section-alt">
+      <div class="container">
+        <h2>Pricing</h2>
+        <p class="section-intro">Simple, upfront prices. Parts are charged separately.</p>
+        <div class="price-list">
+          <div class="price-row"><span>Basic Wash</span><span class="dots"></span><span>$25</span></div>
+          <div class="price-row"><span>Deep Clean &amp; Lube</span><span class="dots"></span><span>$55</span></div>
+          <div class="price-row"><span>Flat Repair</span><span class="dots"></span><span>$15</span></div>
+          <div class="price-row"><span>Standard Tune-Up</span><span class="dots"></span><span>$75</span></div>
+          <div class="price-row"><span>Full Overhaul</span><span class="dots"></span><span>$180</span></div>
+          <div class="price-row"><span>Wheel Truing</span><span class="dots"></span><span>$25</span></div>
+          <div class="price-row"><span>Hydraulic Brake Bleed</span><span class="dots"></span><span>$35</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section">
+      <div class="container about">
+        <div>
+          <h2>About Us</h2>
+          <p>We're a local bike shop that cares about one thing: getting you back on the road. Every bike that comes through our doors gets the same careful attention, whether it's a carbon race bike or a well-loved commuter.</p>
+          <p>Book online, drop your bike off, and we'll email you as soon as it's ready.</p>
+        </div>
+        <ul class="highlights">
+          <li><strong>Same-week</strong> appointments</li>
+          <li><strong>Free</strong> safety check with every service</li>
+          <li><strong>All bikes</strong> welcome, including e-bikes</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ BOOKING ============ -->
+    <section id="book" class="section section-alt">
+      <div class="container narrow">
+        <h2>Book an Appointment</h2>
+        <p class="section-intro">Fill in the form and we'll email you to confirm your time.</p>
+
+        <!--
+          ==========================================================
+          EMAIL SETUP: replace YOUR-EMAIL@example.com below with the
+          email address where you want to receive appointment requests.
+          The first time someone submits the form, FormSubmit will send
+          a one-time activation email to that address — click the link
+          in it and every booking after that lands in your inbox.
+          ==========================================================
+        -->
+        <form id="booking-form" class="booking-form"
+              action="https://formsubmit.co/YOUR-EMAIL@example.com"
+              method="POST">
+
+          <!-- FormSubmit settings -->
+          <input type="hidden" name="_subject" value="New bike appointment request">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
+
+          <div class="form-row">
+            <label>Full name
+              <input type="text" name="name" required autocomplete="name">
+            </label>
+            <label>Email
+              <input type="email" name="email" required autocomplete="email">
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>Phone
+              <input type="tel" name="phone" autocomplete="tel">
+            </label>
+            <label>Service
+              <select name="service" required>
+                <option value="">Choose a service…</option>
+                <option>Basic Wash</option>
+                <option>Deep Clean &amp; Lube</option>
+                <option>Flat Repair</option>
+                <option>Standard Tune-Up</option>
+                <option>Full Overhaul</option>
+                <option>Wheel Truing</option>
+                <option>Brake Service</option>
+                <option>Other / Not sure</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>Preferred date
+              <input type="date" name="date" id="date" required>
+            </label>
+            <label>Preferred time
+              <select name="time" required>
+                <option value="">Choose a time…</option>
+                <option>Morning (9am – 12pm)</option>
+                <option>Afternoon (12pm – 3pm)</option>
+                <option>Late afternoon (3pm – 6pm)</option>
+              </select>
+            </label>
+          </div>
+
+          <label>Bike type
+            <input type="text" name="bike" placeholder="e.g. Trek road bike, e-bike, kids' bike">
+          </label>
+
+          <label>Tell us about the problem
+            <textarea name="message" rows="4" placeholder="Squeaky brakes, gears slipping, just needs a clean…"></textarea>
+          </label>
+
+          <button type="submit" class="btn btn-block">Request Appointment</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section">
+      <div class="container contact-grid">
+        <div>
+          <h3>Visit</h3>
+          <p>123 Main Street<br>Your City, ST 00000</p>
+        </div>
+        <div>
+          <h3>Hours</h3>
+          <p>Mon – Fri: 9am – 6pm<br>Sat: 10am – 4pm<br>Sun: Closed</p>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p><a href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a><br>(555) 123-4567</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Spoke &amp; Shine Bicycle Cleaning &amp; Repair</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
