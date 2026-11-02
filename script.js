@@ -21,6 +21,23 @@ const today = new Date();
 today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
 dateInput.min = today.toISOString().split("T")[0];
 
+// Cleaning / repair choices: at least one is needed, and "Autre" needs a description
+const cleaning = document.getElementById("cleaning");
+const repair = document.getElementById("repair");
+const message = document.getElementById("message");
+const messageLabel = document.getElementById("message-label");
+
+function updateChoices() {
+  const nothing = cleaning.value === "Aucun" && repair.value === "Aucune";
+  repair.setCustomValidity(nothing ? "Veuillez choisir un nettoyage, une réparation, ou les deux." : "");
+  const other = repair.value === "Autre";
+  message.required = other;
+  messageLabel.textContent = other ? "Décrivez le problème (obligatoire)" : "Décrivez le problème";
+}
+cleaning.addEventListener("change", updateChoices);
+repair.addEventListener("change", updateChoices);
+updateChoices();
+
 // Send the booking form to your email without leaving the page
 const form = document.getElementById("booking-form");
 const status = document.getElementById("form-status");
@@ -47,6 +64,7 @@ form.addEventListener("submit", async (e) => {
       throw new Error(data.message || "Request failed");
     }
     form.reset();
+    updateChoices();
     status.classList.add("success");
     status.textContent = "Merci ! Votre demande a bien été envoyée. Nous vous confirmerons le rendez-vous par e-mail.";
   } catch (err) {

@@ -11,6 +11,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 70px; }
 
 body {
   background: var(--bg);
@@ -91,6 +92,14 @@ h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 800; letter-spacing: -.
 .features li::before { content: "✓"; position: absolute; left: 0; color: var(--text); font-weight: 700; }
 .featured { border-color: var(--text); }
 .badge { position: absolute; top: -12px; left: 28px; background: var(--text); color: var(--bg) !important; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; padding: 3px 10px; border-radius: 999px; }
+
+/* ---------- Other / combine ---------- */
+.wide { margin-top: 20px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.wide > div { flex: 1 1 360px; }
+.combine { margin-top: 20px; border: 1px dashed #555; border-radius: var(--radius); padding: 22px 28px; text-align: center; }
+.combine p { color: var(--muted); }
+.combine .combine-title { color: var(--text); font-weight: 800; font-size: 1.2rem; margin-bottom: 4px; }
+.form-hint { color: var(--muted); font-size: .95rem; margin-bottom: -6px; }
 
 /* ---------- Pricing ---------- */
 .price-list { max-width: 640px; }

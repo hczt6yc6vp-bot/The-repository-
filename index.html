@@ -119,6 +119,19 @@
             </ul>
           </article>
         </div>
+
+        <article class="card wide">
+          <div>
+            <h3>Autre problème ?</h3>
+            <p>Votre souci ne figure pas dans la liste ? Choisissez « Autre » dans le formulaire et décrivez-nous le problème. Nous vous répondrons avec un devis.</p>
+          </div>
+          <a href="#reserver" class="btn btn-outline">Décrire mon problème</a>
+        </article>
+
+        <div class="combine">
+          <p class="combine-title">Nettoyage + réparation</p>
+          <p>Vous pouvez combiner un nettoyage et une réparation lors du même rendez-vous : il suffit de choisir les deux dans le formulaire.</p>
+        </div>
       </div>
     </section>
 
@@ -167,24 +180,27 @@
             </label>
           </div>
 
+          <label>Téléphone
+            <input type="tel" name="Téléphone" autocomplete="tel">
+          </label>
+
+          <p class="form-hint">Choisissez un nettoyage, une réparation, ou combinez les deux.</p>
           <div class="form-row">
-            <label>Téléphone
-              <input type="tel" name="Téléphone" autocomplete="tel">
+            <label>Nettoyage
+              <select name="Nettoyage" id="cleaning">
+                <option value="Aucun">Aucun nettoyage</option>
+                <option>Essentiel (35 CHF)</option>
+                <option>Protection (55 CHF)</option>
+                <option>Premium (85 CHF)</option>
+              </select>
             </label>
-            <label>Prestation
-              <select name="Prestation" required>
-                <option value="">Choisir une prestation…</option>
-                <optgroup label="Nettoyage">
-                  <option>Nettoyage Essentiel (35 CHF)</option>
-                  <option>Nettoyage Protection (55 CHF)</option>
-                  <option>Nettoyage Premium (85 CHF)</option>
-                </optgroup>
-                <optgroup label="Réparation">
-                  <option>Réparation crevaison (25 CHF)</option>
-                  <option>Révision (40 CHF)</option>
-                  <option>Révision complète (60 CHF)</option>
-                </optgroup>
-                <option>Autre / Je ne sais pas</option>
+            <label>Réparation
+              <select name="Réparation" id="repair">
+                <option value="Aucune">Aucune réparation</option>
+                <option>Crevaison (25 CHF)</option>
+                <option>Révision (40 CHF)</option>
+                <option>Révision complète (60 CHF)</option>
+                <option value="Autre">Autre (décrire le problème)</option>
               </select>
             </label>
           </div>
@@ -207,8 +223,8 @@
             <input type="text" name="Vélo" placeholder="ex. vélo de route, VTT, vélo électrique, vélo enfant">
           </label>
 
-          <label>Décrivez le problème
-            <textarea name="Message" rows="4" placeholder="Freins qui grincent, vitesses qui sautent, juste un nettoyage…"></textarea>
+          <label><span id="message-label">Décrivez le problème</span>
+            <textarea name="Message" id="message" rows="4" placeholder="Freins qui grincent, vitesses qui sautent, juste un nettoyage…"></textarea>
           </label>
 
           <button type="submit" class="btn btn-block">Envoyer la demande</button>
