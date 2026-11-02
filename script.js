@@ -29,7 +29,7 @@ form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const button = form.querySelector("button[type=submit]");
   button.disabled = true;
-  button.textContent = "Sending…";
+  button.textContent = "Envoi…";
   status.className = "form-status";
   status.textContent = "";
 
@@ -48,12 +48,12 @@ form.addEventListener("submit", async (e) => {
     }
     form.reset();
     status.classList.add("success");
-    status.textContent = "Thanks! Your request was sent. We'll email you to confirm your appointment.";
+    status.textContent = "Merci ! Votre demande a bien été envoyée. Nous vous confirmerons le rendez-vous par e-mail.";
   } catch (err) {
     status.classList.add("error");
-    status.textContent = "Sorry, something went wrong. Please try again or email us directly.";
+    status.textContent = "Désolé, une erreur est survenue. Veuillez réessayer ou nous écrire directement à olaf@eulers.ch.";
   } finally {
     button.disabled = false;
-    button.textContent = "Request Appointment";
+    button.textContent = "Envoyer la demande";
   }
 });
