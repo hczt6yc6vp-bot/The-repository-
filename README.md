@@ -24,6 +24,11 @@ The site is in French. Address: Chemin du Nantet 21, 1245 Collonge-Bellerive. Ph
 Drop-off and pick-up hours: Mon, Tue, Thu, Fri from 16:00; Wed from 12:00;
 weekends depending on availability. Clients pick a drop-off date in the form.
 
+## Online
+
+Live at **https://olafsgarage.ch** (GitHub Pages from `main`, custom domain set by
+the `CNAME` file; domain and DNS at Infomaniak).
+
 ## Publish for free with GitHub Pages
 
 1. In this repository on GitHub, go to **Settings → Pages**.
