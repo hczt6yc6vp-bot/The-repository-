@@ -91,7 +91,7 @@
     <section id="reparation" class="section section-alt">
       <div class="container">
         <h2>Réparation</h2>
-        <p class="section-intro">Des prix fixes, pièces comprises.</p>
+        <p class="section-intro">Des prix fixes. Les pièces utilisées pour ces forfaits sont comprises.</p>
         <div class="grid">
           <article class="card package">
             <h3>Crevaison</h3>
@@ -125,8 +125,9 @@
 
         <article class="card wide">
           <div>
-            <h3>Autre problème ?</h3>
-            <p class="labor-price"><strong>10 CHF</strong> / heure de main-d'œuvre <span>+ le prix des pièces (non comprises)</span></p>
+            <h3>Autre problème ou pièce à changer ?</h3>
+            <p class="labor-price"><strong>10 CHF</strong> / heure de main-d'œuvre <span>+ le prix des pièces</span></p>
+            <p>Toute demande en dehors des forfaits (par exemple changer des plaquettes de frein, une chaîne ou un pneu) est facturée en plus : main-d'œuvre et pièces.</p>
             <p>Votre souci ne figure pas dans la liste ? Choisissez « Autre » dans le formulaire et décrivez-moi le problème. Je vous répondrai avec un devis.</p>
           </div>
           <a href="#reserver" class="btn btn-outline">Décrire mon problème</a>
@@ -148,7 +149,7 @@
           <p>Réservez en ligne, déposez votre vélo, et je vous envoie un e-mail dès qu'il est prêt.</p>
         </div>
         <ul class="highlights">
-          <li><strong>Dépôt</strong> dès 16h, le mercredi dès 12h</li>
+          <li><strong>Dépôt</strong> à midi et en fin de journée</li>
           <li><strong>Prix fixes</strong> en CHF, sans surprise</li>
           <li><strong>Tous les vélos</strong> sont les bienvenus, y compris électriques</li>
         </ul>
@@ -164,15 +165,15 @@
         <div class="dropoff">
           <div>
             <h3>Quand déposer et reprendre votre vélo</h3>
-            <p>Je fais mes études, donc l'atelier ouvre après les cours. Vous pouvez déposer votre vélo et le reprendre aux mêmes horaires. Le week-end, c'est possible selon mes disponibilités : je vous le confirmerai par e-mail.</p>
+            <p>Je fais mes études, donc l'atelier est ouvert à midi et après les cours. Vous pouvez déposer votre vélo et le reprendre aux mêmes horaires. Le week-end, c'est possible selon mes disponibilités : je vous le confirmerai par e-mail.</p>
           </div>
           <table class="hours">
             <tbody>
-              <tr><th>Lundi</th><td>dès 16h</td></tr>
-              <tr><th>Mardi</th><td>dès 16h</td></tr>
-              <tr><th>Mercredi</th><td>dès 12h</td></tr>
-              <tr><th>Jeudi</th><td>dès 16h</td></tr>
-              <tr><th>Vendredi</th><td>dès 16h</td></tr>
+              <tr><th>Lundi</th><td>12h15 – 13h15<br>16h15 – 19h00</td></tr>
+              <tr><th>Mardi</th><td>12h15 – 13h15<br>16h15 – 17h15</td></tr>
+              <tr><th>Mercredi</th><td>12h15 – 14h30<br>17h00 – 19h00</td></tr>
+              <tr><th>Jeudi</th><td>12h15 – 13h15<br>16h15 – 19h00</td></tr>
+              <tr><th>Vendredi</th><td>12h15 – 13h15<br>16h15 – 17h15</td></tr>
               <tr><th>Samedi – Dimanche</th><td>selon disponibilité</td></tr>
             </tbody>
           </table>
@@ -226,10 +227,16 @@
             <label>Date de dépôt
               <input type="date" name="Date de dépôt" id="date" required>
             </label>
-            <label>Type de vélo
-              <input type="text" name="Vélo" placeholder="ex. VTT, vélo de route, électrique">
+            <label><span id="slot-label">Heure de dépôt</span>
+              <select name="Créneau" id="slot" required disabled>
+                <option value="">Choisissez d'abord une date</option>
+              </select>
             </label>
           </div>
+
+          <label>Type de vélo
+            <input type="text" name="Vélo" placeholder="ex. VTT, vélo de route, électrique">
+          </label>
 
           <label><span id="message-label">Décrivez le problème</span>
             <textarea name="Message" id="message" rows="4" placeholder="Freins qui grincent, vitesses qui sautent, juste un nettoyage…"></textarea>
@@ -250,7 +257,7 @@
         </div>
         <div>
           <h3>Dépôt et retrait</h3>
-          <p>Lun, Mar, Jeu, Ven : dès 16h<br>Mer : dès 12h<br>Sam – Dim : selon disponibilité</p>
+          <p>Lun, Jeu : 12h15 – 13h15, 16h15 – 19h00<br>Mar, Ven : 12h15 – 13h15, 16h15 – 17h15<br>Mer : 12h15 – 14h30, 17h00 – 19h00<br>Sam – Dim : selon disponibilité</p>
         </div>
         <div>
           <h3>Contact</h3>

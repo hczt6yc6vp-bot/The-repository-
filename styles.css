@@ -193,3 +193,4 @@ h1, h2, h3 { font-weight: 600; text-wrap: balance; }
   .section { padding: 64px 0; }
   .about, .form-row, .dropoff { grid-template-columns: 1fr; }
 }
+.wide > div > p + p { margin-top: 8px; }
