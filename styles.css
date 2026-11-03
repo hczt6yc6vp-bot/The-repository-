@@ -80,6 +80,7 @@ a { color: var(--text); }
 .section { padding: 90px 0; }
 .section-alt { background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 600; }
+.section-intro strong { color: var(--text); }
 .section-intro { color: var(--muted); margin: 10px 0 40px; }
 
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
@@ -104,9 +105,8 @@ h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 600; }
 h1, h2, h3 { font-weight: 600; text-wrap: balance; }
 
 /* ---------- Labor rate ---------- */
-.labor { display: flex; align-items: baseline; gap: 6px 14px; flex-wrap: wrap; border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 22px; margin: -16px 0 28px; }
-.labor p { color: var(--muted); }
-.labor .labor-price { color: var(--text); font-size: 1.15rem; }
+.wide .labor-price { color: var(--text); font-size: 1.15rem; margin: 4px 0 8px; }
+.wide .labor-price span { color: var(--muted); font-size: 1rem; }
 
 /* ---------- Drop-off hours ---------- */
 .dropoff { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; margin: -12px 0 32px; }
