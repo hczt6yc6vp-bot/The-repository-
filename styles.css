@@ -61,7 +61,10 @@ a { color: var(--text); }
 }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 70px; }
 .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; text-decoration: none; }
-.logo svg { width: 44px; height: 22px; fill: none; stroke: var(--text); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.logo .wheel { width: 40px; height: 40px; flex: none; transition: transform .6s ease; }
+.logo:hover .wheel, .logo:focus-visible .wheel { transform: rotate(90deg); }
+.hero-mark { display: block; width: 112px; height: 112px; margin: 0 auto 28px; }
+@media (prefers-reduced-motion: reduce) { .logo .wheel { transition: none; } }
 .nav-links { display: flex; align-items: center; gap: 28px; }
 .nav-links a:not(.btn) { text-decoration: none; color: var(--muted); font-weight: 500; }
 .nav-links a:not(.btn):hover { color: var(--text); }
