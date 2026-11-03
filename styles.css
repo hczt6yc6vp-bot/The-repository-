@@ -80,7 +80,6 @@ a { color: var(--text); }
 .section { padding: 90px 0; }
 .section-alt { background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 600; }
-.section-intro strong { color: var(--text); }
 .section-intro { color: var(--muted); margin: 10px 0 40px; }
 
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
