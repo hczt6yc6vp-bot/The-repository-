@@ -97,10 +97,10 @@ form.addEventListener("submit", async (e) => {
     updateChoices();
     updateDropoff();
     status.classList.add("success");
-    status.textContent = "Merci ! Votre demande a bien été envoyée. Nous vous confirmerons le rendez-vous par e-mail.";
+    status.textContent = "Merci ! Votre demande a bien été envoyée. Je vous confirmerai le rendez-vous par e-mail.";
   } catch (err) {
     status.classList.add("error");
-    status.textContent = "Désolé, une erreur est survenue. Veuillez réessayer ou nous écrire directement à olaf@eulers.ch.";
+    status.textContent = "Une erreur est survenue. Veuillez réessayer ou m'écrire directement à olaf@eulers.ch.";
   } finally {
     button.disabled = false;
     button.textContent = "Envoyer la demande";
