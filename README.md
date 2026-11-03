@@ -12,11 +12,8 @@ appointment form that sends booking requests straight to your email.
 ## Email
 
 Booking requests are sent to **contact@olafsgarage.ch** via
-[FormSubmit](https://formsubmit.co) (free, no account needed).
-
-After the site is online, submit one test booking. FormSubmit will send an
-**activation email** to contact@olafsgarage.ch — click the link in it once. After
-that, every booking arrives in that inbox with the client's details.
+[Web3Forms](https://web3forms.com) (free). The access key is the
+`access_key` field in the booking form in `index.html`.
 
 ## Make it your own
 

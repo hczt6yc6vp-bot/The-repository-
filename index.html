@@ -178,19 +178,15 @@
           </table>
         </div>
 
-        <!--
-          Les demandes sont envoyées à contact@olafsgarage.ch via FormSubmit.
-          Lors de la première demande, FormSubmit envoie un e-mail
-          d'activation à cette adresse : cliquez sur le lien une seule fois.
-        -->
+        <!-- Les demandes sont envoyées à contact@olafsgarage.ch via Web3Forms (clé d'accès ci-dessous). -->
         <form id="booking-form" class="booking-form"
-              action="https://formsubmit.co/contact@olafsgarage.ch"
+              action="https://api.web3forms.com/submit"
               method="POST">
 
-          <input type="hidden" name="_subject" value="Nouvelle demande de rendez-vous vélo">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="access_key" value="4a3b6727-6fb5-4817-8acd-7b03af1ad186">
+          <input type="hidden" name="subject" value="Nouvelle demande de rendez-vous vélo">
+          <input type="hidden" name="from_name" value="Olafsgarage.ch">
+          <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off">
 
           <div class="form-row">
             <label>Nom complet

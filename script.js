@@ -50,17 +50,14 @@ form.addEventListener("submit", async (e) => {
   status.className = "form-status";
   status.textContent = "";
 
-  // FormSubmit's AJAX endpoint lives at /ajax/<email>
-  const ajaxUrl = form.action.replace("formsubmit.co/", "formsubmit.co/ajax/");
-
   try {
-    const res = await fetch(ajaxUrl, {
+    const res = await fetch(form.action, {
       method: "POST",
       headers: { Accept: "application/json" },
       body: new FormData(form),
     });
     const data = await res.json().catch(() => ({}));
-    if (!res.ok || data.success === "false" || data.success === false) {
+    if (!res.ok || data.success !== true) {
       throw new Error(data.message || "Request failed");
     }
     form.reset();
