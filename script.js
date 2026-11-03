@@ -69,7 +69,7 @@ form.addEventListener("submit", async (e) => {
     status.textContent = "Merci ! Votre demande a bien été envoyée. Je vous confirmerai le rendez-vous par e-mail.";
   } catch (err) {
     status.classList.add("error");
-    status.textContent = "Une erreur est survenue. Veuillez réessayer ou m'écrire directement à olaf@eulers.ch.";
+    status.textContent = "Une erreur est survenue. Veuillez réessayer ou m'écrire directement à contact@olafsgarage.ch.";
   } finally {
     button.disabled = false;
     button.textContent = "Envoyer la demande";
