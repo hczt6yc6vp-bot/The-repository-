@@ -148,7 +148,7 @@
           <p>Réservez en ligne, déposez votre vélo, et nous vous envoyons un e-mail dès qu'il est prêt.</p>
         </div>
         <ul class="highlights">
-          <li><strong>Rendez-vous</strong> dans la semaine</li>
+          <li><strong>Dépôt</strong> dès 16h, le mercredi dès 12h</li>
           <li><strong>Prix fixes</strong> en CHF, sans surprise</li>
           <li><strong>Tous les vélos</strong> sont les bienvenus, y compris électriques</li>
         </ul>
@@ -160,6 +160,23 @@
       <div class="container narrow">
         <h2>Prendre rendez-vous</h2>
         <p class="section-intro">Remplissez le formulaire et nous vous confirmerons votre rendez-vous par e-mail.</p>
+
+        <div class="dropoff">
+          <div>
+            <h3>Quand déposer et reprendre votre vélo</h3>
+            <p>Je fais mes études, donc l'atelier ouvre après les cours. Vous pouvez déposer votre vélo et le reprendre aux mêmes horaires.</p>
+          </div>
+          <table class="hours">
+            <tbody>
+              <tr><th>Lundi</th><td>dès 16h</td></tr>
+              <tr><th>Mardi</th><td>dès 16h</td></tr>
+              <tr><th>Mercredi</th><td>dès 12h</td></tr>
+              <tr><th>Jeudi</th><td>dès 16h</td></tr>
+              <tr><th>Vendredi</th><td>dès 16h</td></tr>
+              <tr><th>Samedi – Dimanche</th><td>fermé</td></tr>
+            </tbody>
+          </table>
+        </div>
 
         <!--
           Les demandes sont envoyées à olaf@eulers.ch via FormSubmit.
@@ -210,16 +227,11 @@
           </div>
 
           <div class="form-row">
-            <label>Date souhaitée
-              <input type="date" name="Date" id="date" required>
+            <label>Date de dépôt
+              <input type="date" name="Date de dépôt" id="date" required>
             </label>
-            <label>Heure souhaitée
-              <select name="Heure" required>
-                <option value="">Choisir un créneau…</option>
-                <option>Matin (9h – 12h)</option>
-                <option>Début d'après-midi (12h – 15h)</option>
-                <option>Fin d'après-midi (15h – 18h)</option>
-              </select>
+            <label><span id="time-label">Heure de dépôt</span>
+              <input type="time" name="Heure de dépôt" id="time" step="900" required>
             </label>
           </div>
 
@@ -245,8 +257,8 @@
           <p>Rue Principale 1<br>1000 Votre ville</p>
         </div>
         <div>
-          <h3>Horaires</h3>
-          <p>Lun – Ven : 9h – 18h<br>Sam : 10h – 16h<br>Dim : fermé</p>
+          <h3>Dépôt et retrait</h3>
+          <p>Lun, Mar, Jeu, Ven : dès 16h<br>Mer : dès 12h<br>Sam – Dim : fermé</p>
         </div>
         <div>
           <h3>Contact</h3>

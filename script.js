@@ -21,6 +21,36 @@ const today = new Date();
 today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
 dateInput.min = today.toISOString().split("T")[0];
 
+// Drop-off days and times: Mon, Tue, Thu, Fri from 16:00, Wed from 12:00, closed on weekends
+const timeInput = document.getElementById("time");
+const timeLabel = document.getElementById("time-label");
+const OPENING = { 1: "16:00", 2: "16:00", 3: "12:00", 4: "16:00", 5: "16:00" };
+
+function updateDropoff() {
+  dateInput.setCustomValidity("");
+  timeInput.setCustomValidity("");
+  if (!dateInput.value) {
+    timeInput.min = "12:00";
+    timeLabel.textContent = "Heure de dépôt";
+    return;
+  }
+  const day = new Date(dateInput.value + "T12:00").getDay();
+  const opens = OPENING[day];
+  if (!opens) {
+    dateInput.setCustomValidity("Fermé le week-end. Choisissez un jour du lundi au vendredi.");
+    timeLabel.textContent = "Heure de dépôt";
+    return;
+  }
+  timeInput.min = opens;
+  timeLabel.textContent = "Heure de dépôt (dès " + opens.replace(":00", "h") + ")";
+  if (timeInput.value && timeInput.value < opens) {
+    timeInput.setCustomValidity("Ce jour-là, le dépôt est possible dès " + opens.replace(":00", "h") + ".");
+  }
+}
+dateInput.addEventListener("change", () => { updateDropoff(); dateInput.reportValidity(); });
+timeInput.addEventListener("change", updateDropoff);
+updateDropoff();
+
 // Cleaning / repair choices: at least one is needed, and "Autre" needs a description
 const cleaning = document.getElementById("cleaning");
 const repair = document.getElementById("repair");
@@ -65,6 +95,7 @@ form.addEventListener("submit", async (e) => {
     }
     form.reset();
     updateChoices();
+    updateDropoff();
     status.classList.add("success");
     status.textContent = "Merci ! Votre demande a bien été envoyée. Nous vous confirmerons le rendez-vous par e-mail.";
   } catch (err) {

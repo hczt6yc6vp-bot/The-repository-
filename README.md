@@ -20,8 +20,10 @@ that, every booking arrives in that inbox with the client's details.
 
 ## Make it your own
 
-The site is in French. Edit `index.html` to change the address and opening hours (currently
-placeholders).
+The site is in French. Edit `index.html` to change the address (currently a placeholder).
+Drop-off and pick-up hours: Mon, Tue, Thu, Fri from 16:00; Wed from 12:00;
+closed on weekends. The booking form enforces these (see `OPENING` in
+`script.js`).
 
 ## Publish for free with GitHub Pages
 
