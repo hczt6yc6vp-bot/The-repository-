@@ -22,9 +22,7 @@ that, every booking arrives in that inbox with the client's details.
 
 The site is in French. Address: Chemin du Nantet 21, 1245 Collonge-Bellerive. Phone: +41 78 881 19 38.
 Drop-off and pick-up hours: Mon, Tue, Thu, Fri from 16:00; Wed from 12:00;
-weekends depending on availability (confirmed by email). The booking form
-enforces the weekday times (see `OPENING` in
-`script.js`).
+weekends depending on availability. Clients pick a drop-off date in the form.
 
 ## Publish for free with GitHub Pages
 

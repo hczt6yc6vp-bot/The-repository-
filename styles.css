@@ -158,8 +158,8 @@ h1, h2, h3 { font-weight: 600; text-wrap: balance; }
   min-width: 0;
   max-width: 100%;
 }
-.booking-form input[type=date], .booking-form input[type=time] { -webkit-appearance: none; appearance: none; min-height: 48px; display: block; }
-.booking-form input[type=date]::-webkit-date-and-time-value, .booking-form input[type=time]::-webkit-date-and-time-value { text-align: left; }
+.booking-form input[type=date] { -webkit-appearance: none; appearance: none; min-height: 48px; display: block; }
+.booking-form input[type=date]::-webkit-date-and-time-value { text-align: left; }
 .booking-form input:focus,
 .booking-form select:focus,
 .booking-form textarea:focus { outline: none; border-color: var(--text); }
