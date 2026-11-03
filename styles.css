@@ -194,3 +194,16 @@ h1, h2, h3 { font-weight: 600; text-wrap: balance; }
   .about, .form-row, .dropoff { grid-template-columns: 1fr; }
 }
 .wide > div > p + p { margin-top: 8px; }
+
+/* ---------- Included vs extra ---------- */
+.parts { margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.parts-col { padding: 22px 28px; display: grid; gap: 8px; align-content: start; }
+.parts-col + .parts-col { border-left: 1px solid var(--line); }
+.parts-col p { color: var(--muted); }
+.parts-col strong { color: var(--text); font-weight: 600; }
+.parts .parts-title { color: var(--text); font-family: var(--font-ui); font-weight: 700; font-size: 1.05rem; display: flex; align-items: center; gap: 10px; }
+.parts .mark { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid var(--text); font-size: .85rem; flex: none; }
+@media (max-width: 760px) {
+  .parts { grid-template-columns: 1fr; }
+  .parts-col + .parts-col { border-left: 0; border-top: 1px solid var(--line); }
+}
