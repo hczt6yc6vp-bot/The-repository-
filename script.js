@@ -38,6 +38,39 @@ cleaning.addEventListener("change", updateChoices);
 repair.addEventListener("change", updateChoices);
 updateChoices();
 
+// Turn the form into a clean, readable booking email:
+// a clear subject, the date written out in French, and no empty lines
+function buildBookingEmail() {
+  const get = (name) => (form.elements[name]?.value || "").trim();
+  const dateFr = get("Date de dépôt")
+    ? new Date(get("Date de dépôt") + "T12:00").toLocaleDateString("fr-FR", {
+        weekday: "long", day: "numeric", month: "long", year: "numeric",
+      })
+    : "";
+  const cleaningChoice = get("Nettoyage") === "Aucun" ? "" : get("Nettoyage");
+  const repairChoice = get("Réparation") === "Aucune" ? "" : get("Réparation");
+  const services = [cleaningChoice && "Nettoyage " + cleaningChoice, repairChoice && "Réparation " + repairChoice]
+    .filter(Boolean).join(" + ");
+
+  const fields = {
+    "Client": get("Nom"),
+    "email": get("email"),
+    "Téléphone": get("Téléphone"),
+    "Prestations": services,
+    "Dépôt du vélo": dateFr,
+    "Type de vélo": get("Vélo"),
+    "Description": get("Message"),
+  };
+  const payload = {
+    access_key: get("access_key"),
+    subject: "Réservation – " + get("Nom") + (dateFr ? " – " + dateFr : ""),
+    from_name: "Olafsgarage.ch",
+    botcheck: form.elements["botcheck"].checked,
+  };
+  for (const [k, v] of Object.entries(fields)) if (v) payload[k] = v;
+  return payload;
+}
+
 // Send the booking form to your email without leaving the page
 const form = document.getElementById("booking-form");
 const status = document.getElementById("form-status");
@@ -53,8 +86,9 @@ form.addEventListener("submit", async (e) => {
   try {
     const res = await fetch(form.action, {
       method: "POST",
-      headers: { Accept: "application/json" },
-      body: new FormData(form),
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      // JSON keeps accents (é, ô) intact in the email
+      body: JSON.stringify(buildBookingEmail()),
     });
     const data = await res.json().catch(() => ({}));
     if (!res.ok || data.success !== true) {
