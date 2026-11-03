@@ -21,7 +21,7 @@ const today = new Date();
 today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
 dateInput.min = today.toISOString().split("T")[0];
 
-// Drop-off days and times: Mon, Tue, Thu, Fri from 16:00, Wed from 12:00, closed on weekends
+// Drop-off days and times: Mon, Tue, Thu, Fri from 16:00, Wed from 12:00, weekends depending on availability (confirmed by email)
 const timeInput = document.getElementById("time");
 const timeLabel = document.getElementById("time-label");
 const OPENING = { 1: "16:00", 2: "16:00", 3: "12:00", 4: "16:00", 5: "16:00" };
@@ -37,8 +37,8 @@ function updateDropoff() {
   const day = new Date(dateInput.value + "T12:00").getDay();
   const opens = OPENING[day];
   if (!opens) {
-    dateInput.setCustomValidity("Fermé le week-end. Choisissez un jour du lundi au vendredi.");
-    timeLabel.textContent = "Heure de dépôt";
+    timeInput.min = "";
+    timeLabel.textContent = "Heure de dépôt (week-end : selon disponibilité)";
     return;
   }
   timeInput.min = opens;
