@@ -21,6 +21,36 @@ const today = new Date();
 today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
 dateInput.min = today.toISOString().split("T")[0];
 
+// Drop-off time slots for each day of the week (0 = Sunday … 6 = Saturday)
+const SLOTS = {
+  1: ["12h15 – 13h15", "16h15 – 19h00"],
+  2: ["12h15 – 13h15", "16h15 – 17h15"],
+  3: ["12h15 – 14h30", "17h00 – 19h00"],
+  4: ["12h15 – 13h15", "16h15 – 19h00"],
+  5: ["12h15 – 13h15", "16h15 – 17h15"],
+};
+const WEEKEND_SLOTS = ["Matin", "Après-midi", "Soir"];
+const slotSelect = document.getElementById("slot");
+const slotLabel = document.getElementById("slot-label");
+
+function updateSlots() {
+  slotSelect.innerHTML = "";
+  if (!dateInput.value) {
+    slotSelect.disabled = true;
+    slotSelect.add(new Option("Choisissez d'abord une date", ""));
+    slotLabel.textContent = "Heure de dépôt";
+    return;
+  }
+  const day = new Date(dateInput.value + "T12:00").getDay();
+  const weekend = !SLOTS[day];
+  slotSelect.disabled = false;
+  slotSelect.add(new Option("Choisir un créneau…", ""));
+  for (const s of weekend ? WEEKEND_SLOTS : SLOTS[day]) slotSelect.add(new Option(s, s));
+  slotLabel.textContent = weekend ? "Heure de dépôt (week-end : selon disponibilité)" : "Heure de dépôt";
+}
+dateInput.addEventListener("change", updateSlots);
+updateSlots();
+
 // Cleaning / repair choices: at least one is needed, and "Autre" needs a description
 const cleaning = document.getElementById("cleaning");
 const repair = document.getElementById("repair");
@@ -57,7 +87,7 @@ function buildBookingEmail() {
     "email": get("email"),
     "Téléphone": get("Téléphone"),
     "Prestations": services,
-    "Dépôt du vélo": dateFr,
+    "Dépôt du vélo": dateFr + (get("Créneau") ? ", " + get("Créneau") : ""),
     "Type de vélo": get("Vélo"),
     "Description": get("Message"),
   };
@@ -96,6 +126,7 @@ form.addEventListener("submit", async (e) => {
     }
     form.reset();
     updateChoices();
+    updateSlots();
     status.classList.add("success");
     status.textContent = "Merci ! Votre demande a bien été envoyée. Je vous confirmerai le rendez-vous par e-mail.";
   } catch (err) {

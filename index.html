@@ -8,19 +8,38 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <!-- Logo : roue à crampons, 12 rayons, moyeu orange -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="knobby" viewBox="0 0 400 400">
+      <circle cx="200" cy="200" r="158" fill="none" stroke="#fff" stroke-width="30" stroke-dasharray="27.364 14" stroke-dashoffset="13.682"/>
+      <g fill="#fff">
+        <rect x="194" y="74" width="12" height="52" rx="6"/>
+        <rect x="194" y="74" width="12" height="52" rx="6" transform="rotate(30 200 200)"/>
+        <rect x="194" y="74" width="12" height="52" rx="6" transform="rotate(60 200 200)"/>
+        <rect x="194" y="74" width="12" height="52" rx="6" transform="rotate(90 200 200)"/>
+        <rect x="194" y="74" width="12" height="52" rx="6" transform="rotate(120 200 200)"/>
+        <rect x="194" y="74" width="12" height="52" rx="6" transform="rotate(150 200 200)"/>
+        <rect x="194" y="74" width="12" height="52" rx="6" transform="rotate(180 200 200)"/>
+        <rect x="194" y="74" width="12" height="52" rx="6" transform="rotate(210 200 200)"/>
+        <rect x="194" y="74" width="12" height="52" rx="6" transform="rotate(240 200 200)"/>
+        <rect x="194" y="74" width="12" height="52" rx="6" transform="rotate(270 200 200)"/>
+        <rect x="194" y="74" width="12" height="52" rx="6" transform="rotate(300 200 200)"/>
+        <rect x="194" y="74" width="12" height="52" rx="6" transform="rotate(330 200 200)"/>
+      </g>
+      <circle cx="200" cy="200" r="32" fill="#FF5533"/>
+    </symbol>
+  </svg>
 
   <!-- ============ EN-TÊTE ============ -->
   <header class="site-header">
     <div class="container nav">
       <a href="#top" class="logo">
-        <svg viewBox="0 0 64 32" aria-hidden="true">
-          <circle cx="13" cy="20" r="10"/>
-          <circle cx="51" cy="20" r="10"/>
-          <path d="M13 20 L25 6 H40 L51 20 M25 6 L32 20 L40 6 M22 4 H28 M38 4 H44"/>
-        </svg>
+        <svg class="wheel" viewBox="0 0 400 400" aria-hidden="true"><use href="#knobby"/></svg>
         <span>Olafsgarage.ch</span>
       </a>
       <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
@@ -41,6 +60,7 @@
     <!-- ============ BANNIÈRE ============ -->
     <section class="hero">
       <div class="container">
+        <svg class="hero-mark" viewBox="0 0 400 400" role="img" aria-label="Logo Olafsgarage : une roue de vélo"><use href="#knobby"/></svg>
         <p class="eyebrow">Nettoyage et réparation de vélos</p>
         <h1>Votre vélo, comme neuf.</h1>
         <p class="lead">Nettoyage en profondeur, révisions et réparations pour tous les vélos : route, VTT, ville, enfants et vélos électriques.</p>
@@ -91,14 +111,14 @@
     <section id="reparation" class="section section-alt">
       <div class="container">
         <h2>Réparation</h2>
-        <p class="section-intro">Des prix fixes, pièces comprises.</p>
+        <p class="section-intro">Des prix fixes. Ce qui est nécessaire pour faire le forfait est compris dans le prix.</p>
         <div class="grid">
           <article class="card package">
             <h3>Crevaison</h3>
             <p class="price">25 <span>CHF</span></p>
             <ul class="features">
               <li>Réparation d'un pneu crevé</li>
-              <li>Pièces comprises</li>
+              <li>Rustine ou chambre à air comprise</li>
             </ul>
           </article>
           <article class="card package">
@@ -107,7 +127,7 @@
             <ul class="features">
               <li>Contrôle général du vélo</li>
               <li>Lubrification de la plupart des composants</li>
-              <li>Pièces comprises</li>
+              <li>Lubrifiant compris</li>
             </ul>
           </article>
           <article class="card package featured">
@@ -118,16 +138,28 @@
               <li>Contrôle approfondi du vélo</li>
               <li>Dégraissage de toutes les pièces</li>
               <li>Graissage et lubrification de toutes les pièces</li>
-              <li>Pièces comprises</li>
+              <li>Dégraissant, graisse et lubrifiant compris</li>
             </ul>
           </article>
         </div>
 
+        <div class="parts">
+          <div class="parts-col">
+            <p class="parts-title"><span class="mark">✓</span> Compris dans le prix du forfait</p>
+            <p>Le travail du forfait et tout ce qu'il faut pour le faire : rustine ou chambre à air, dégraissant, graisse, lubrifiant.</p>
+          </div>
+          <div class="parts-col">
+            <p class="parts-title"><span class="mark">+</span> En plus du prix du forfait</p>
+            <p>Les pièces usées ou cassées à remplacer : plaquettes et disques de frein, chaîne, câbles, pneus… <strong>Seul le prix de la pièce est ajouté</strong> : le montage est compris dans le forfait.</p>
+            <p>Je vous envoie toujours un devis et j'attends votre accord avant de changer une pièce.</p>
+          </div>
+        </div>
+
         <article class="card wide">
           <div>
-            <h3>Autre problème ?</h3>
-            <p class="labor-price"><strong>10 CHF</strong> / heure de main-d'œuvre <span>+ le prix des pièces (non comprises)</span></p>
-            <p>Votre souci ne figure pas dans la liste ? Choisissez « Autre » dans le formulaire et décrivez-moi le problème. Je vous répondrai avec un devis.</p>
+            <h3>Demande sur mesure</h3>
+            <p class="labor-price"><strong>10 CHF</strong> / heure de main-d'œuvre <span>+ le prix des pièces</span></p>
+            <p>Pour tout travail qui n'est pas un forfait. Choisissez « Autre » dans le formulaire et décrivez-moi ce dont vous avez besoin : je vous réponds avec un devis.</p>
           </div>
           <a href="#reserver" class="btn btn-outline">Décrire mon problème</a>
         </article>
@@ -148,7 +180,7 @@
           <p>Réservez en ligne, déposez votre vélo, et je vous envoie un e-mail dès qu'il est prêt.</p>
         </div>
         <ul class="highlights">
-          <li><strong>Dépôt</strong> dès 16h, le mercredi dès 12h</li>
+          <li><strong>Dépôt</strong> à midi et en fin de journée</li>
           <li><strong>Prix fixes</strong> en CHF, sans surprise</li>
           <li><strong>Tous les vélos</strong> sont les bienvenus, y compris électriques</li>
         </ul>
@@ -164,15 +196,15 @@
         <div class="dropoff">
           <div>
             <h3>Quand déposer et reprendre votre vélo</h3>
-            <p>Je fais mes études, donc l'atelier ouvre après les cours. Vous pouvez déposer votre vélo et le reprendre aux mêmes horaires. Le week-end, c'est possible selon mes disponibilités : je vous le confirmerai par e-mail.</p>
+            <p>Je fais mes études, donc l'atelier est ouvert à midi et après les cours. Vous pouvez déposer votre vélo et le reprendre aux mêmes horaires. Le week-end, c'est possible selon mes disponibilités : je vous le confirmerai par e-mail.</p>
           </div>
           <table class="hours">
             <tbody>
-              <tr><th>Lundi</th><td>dès 16h</td></tr>
-              <tr><th>Mardi</th><td>dès 16h</td></tr>
-              <tr><th>Mercredi</th><td>dès 12h</td></tr>
-              <tr><th>Jeudi</th><td>dès 16h</td></tr>
-              <tr><th>Vendredi</th><td>dès 16h</td></tr>
+              <tr><th>Lundi</th><td>12h15 – 13h15<br>16h15 – 19h00</td></tr>
+              <tr><th>Mardi</th><td>12h15 – 13h15<br>16h15 – 17h15</td></tr>
+              <tr><th>Mercredi</th><td>12h15 – 14h30<br>17h00 – 19h00</td></tr>
+              <tr><th>Jeudi</th><td>12h15 – 13h15<br>16h15 – 19h00</td></tr>
+              <tr><th>Vendredi</th><td>12h15 – 13h15<br>16h15 – 17h15</td></tr>
               <tr><th>Samedi – Dimanche</th><td>selon disponibilité</td></tr>
             </tbody>
           </table>
@@ -226,10 +258,16 @@
             <label>Date de dépôt
               <input type="date" name="Date de dépôt" id="date" required>
             </label>
-            <label>Type de vélo
-              <input type="text" name="Vélo" placeholder="ex. VTT, vélo de route, électrique">
+            <label><span id="slot-label">Heure de dépôt</span>
+              <select name="Créneau" id="slot" required disabled>
+                <option value="">Choisissez d'abord une date</option>
+              </select>
             </label>
           </div>
+
+          <label>Type de vélo
+            <input type="text" name="Vélo" placeholder="ex. VTT, vélo de route, électrique">
+          </label>
 
           <label><span id="message-label">Décrivez le problème</span>
             <textarea name="Message" id="message" rows="4" placeholder="Freins qui grincent, vitesses qui sautent, juste un nettoyage…"></textarea>
@@ -250,7 +288,7 @@
         </div>
         <div>
           <h3>Dépôt et retrait</h3>
-          <p>Lun, Mar, Jeu, Ven : dès 16h<br>Mer : dès 12h<br>Sam – Dim : selon disponibilité</p>
+          <p>Lun, Jeu : 12h15 – 13h15, 16h15 – 19h00<br>Mar, Ven : 12h15 – 13h15, 16h15 – 17h15<br>Mer : 12h15 – 14h30, 17h00 – 19h00<br>Sam – Dim : selon disponibilité</p>
         </div>
         <div>
           <h3>Contact</h3>
